@@ -1,11 +1,12 @@
 {
-  "name": "backend",
+  "name": "notebook",
   "version": "1.0.0",
-  "description": "NoteBook App",
-  "main": "server.js",
-  "type": "module",
+  "description": "Notebook App",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "frontend": "npm start --prefix frontend",
+    "backend": "nodemon server.js --prefix backend",
+    "dev": "concurrently \" yarn run backend \" \" yarn run frontend\""
   },
   "repository": {
     "type": "git",
@@ -13,10 +14,9 @@
   },
   "keywords": [
     "nodejs",
+    "reactjs",
     "expressjs",
-    "mongoose",
-    "mongodb",
-    "cors"
+    "mongodb"
   ],
   "author": "Md. Maruf Sarker",
   "license": "ISC",
@@ -25,13 +25,7 @@
   },
   "homepage": "https://github.com/mdmarufsarker/notebook#readme",
   "devDependencies": {
+    "concurrently": "^7.3.0",
     "nodemon": "^2.0.19"
-  },
-  "dependencies": {
-    "body-parser": "^1.20.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "mongoose": "^6.4.6"
   }
 }
